@@ -10,7 +10,7 @@ echo "---"
 
 echo "-- Removing RPMs defined in recipe.yml --"
 remove_packages=$(yq '.remove[]' < /usr/etc/ublue-recipe.yml)
-for pkg in $(echo -e "$rpm_packages"); do \
+for pkg in $(echo -e "$remove_packages"); do \
     echo "Removing: ${pkg}" && \
     rpm-ostree override remove $pkg; \
 done
