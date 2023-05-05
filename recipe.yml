@@ -36,6 +36,11 @@ extrarepos:
   - https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/repo/fedora-38/solopasha-hyprland-fedora-38.repo
   - https://copr.fedorainfracloud.org/coprs/eddsalkield/swaylock-effects/repo/fedora-38/eddsalkield-swaylock-effects-fedora-38.repo
 
+# These packages will be removed before the installing packages
+remove:
+  - firefox
+  - firefox-langpacks
+
 # These rpms will be installed from the fedora repository
 # using rpm-ostree and will be preinstalled in the final image
 rpms:

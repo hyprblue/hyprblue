@@ -8,15 +8,13 @@ for script in $(echo -e "$buildscripts"); do \
 done
 echo "---"
 
-# remove the default firefox (from fedora) in favor of the flatpak
-rpm-ostree override remove firefox firefox-langpacks
-
-# temporarily remove nvidia drivers before installing Hyprland due to dependency issues
-# they will be reinstalled with the other rpms
-image_name=$(yq '.name' < /usr/etc/ublue-recipe.yml)
-if [[ "$image_name" == "nvidia" ]]; then
-    rpm-ostree override remove xorg-x11-drv-nvidia-power xorg-x11-drv-nvidia
-fi
+echo "-- Removing RPMs defined in recipe.yml --"
+remove_packages=$(yq '.remove[]' < /usr/etc/ublue-recipe.yml)
+for pkg in $(echo -e "$rpm_packages"); do \
+    echo "Removing: ${pkg}" && \
+    rpm-ostree override remove $pkg; \
+done
+echo "---"
 
 repos=$(yq '.extrarepos[]' < /usr/etc/ublue-recipe.yml)
 if [[ -n "$repos" ]]; then
