@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 
-cat <<EOF > /etc/hyprland/environment
+cat <<EOF > /usr/etc/hyprland/environment
 
 export LIBVA_DRIVER_NAME=nvidia
 export GBM_BACKEND=nvidia-drm
