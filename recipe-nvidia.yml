@@ -39,8 +39,8 @@ extrarepos:
 
 # These packages will be removed before the installing packages
 remove:
-  - firefox
   - firefox-langpacks
+  - firefox
   - xorg-x11-drv-nvidia-power
   - xorg-x11-drv-nvidia
 
