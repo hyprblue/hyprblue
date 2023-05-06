@@ -48,6 +48,7 @@ rpms:
   - libadwaita
   - hyprland
   - xdg-desktop-portal-hyprland
+  - xdg-desktop-portal-gtk
   - xdg-user-dirs
   - waybar-hyprland
   - sddm
@@ -70,6 +71,8 @@ rpms:
   - imv
   - light
   - pavucontrol
+  - mlocate
+  - i2c-tools
 
 # These Flatpaks (from flathub) will be available for install on boot
 # If you leave this empty you can use yafti for post-boot installation
