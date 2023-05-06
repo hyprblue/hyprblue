@@ -52,6 +52,7 @@ rpms:
   - waybar-hyprland
   - sddm
   - lxqt-policykit
+  - gnome-software
   - gnome-keyring
   - wl-clipboard
   - grim
